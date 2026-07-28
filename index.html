@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Davi Fenelon</title>
+    <meta name="description" content="Portfólio de Davi Fenelon, estudante do Técnico em Análise e Desenvolvimento de Sistemas (Senac Paulista - Mediotec), em busca de adquirir mais conhecimento em Programação ou Segurança da Informação. Conheça minha formação, competências técnicas e projetos.">
+    <meta name="author" content="Davi Fenelon">
+    <meta name="theme-color" content="#09090b">
+    <link rel="canonical" href="https://davifenelon.dev/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portfólio de Davi Fenelon">
+    <meta property="og:description" content="Estudante de Análise e Desenvolvimento de Sistemas em busca de estágio em Programação ou Segurança da Informação.">
+    <meta property="og:image" content="img/perfil.jpg">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfólio de Davi Fenelon">
+    <meta name="twitter:description" content="Estudante de Análise e Desenvolvimento de Sistemas em busca de estágio em Programação ou Segurança da Informação.">
+    <meta name="twitter:image" content="img/perfil.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#7c3aed",
+                        secondary: "#8b5cf6",
+                        accent: "#a855f7"
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body data-theme="dark">
+
+    <!-- Tela de carregamento -->
+    <div class="loading-screen" id="loading-screen" aria-hidden="true">
+        <div class="loading-content">
+            <p class="loading-name">Davi<span>.</span>Fenelon</p>
+            <div class="loading-bar"><span></span></div>
+        </div>
+    </div>
+
+    <!-- Cursor personalizado (spritesheet img/cursor.jpg), ver cursor.js -->
+    <div id="custom-cursor" aria-hidden="true"></div>
+
+    <!-- Brilho sutil que acompanha o cursor -->
+    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+    <!-- Fundo espacial global -->
+    <div class="stars-layer" aria-hidden="true"></div>
+    <div class="nebula-blob b1" aria-hidden="true"></div>
+    <div class="nebula-blob b2" aria-hidden="true"></div>
+    <div class="nebula-blob b3" aria-hidden="true"></div>
+
+    <!-- Navegação -->
+    <header id="navbar">
+        <nav class="container mx-auto px-6 py-4 relative">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="logo-mark">Davi<span>.</span>Fenelon</a>
+
+                <div class="nav-links" id="nav-links">
+                    <a href="#home">Início</a>
+                    <a href="#about">Sobre</a>
+                    <a href="#resume">Currículo</a>
+                    <a href="#tech">Tecnologias</a>
+                    <a href="#skills">Habilidades</a>
+                    <a href="#projects">Projetos</a>
+                    <a href="#process">Metodologia</a>
+                    <a href="#learning">Aprendendo</a>
+                    <a href="#contact">Contato</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar modo claro/escuro">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                    <button id="hamburger" class="hamburger md:hidden" aria-label="Abrir menu" aria-expanded="false">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section id="home" class="hero">
+            <!-- Partículas flutuando suavemente pelo fundo da hero -->
+            <div class="hero-particles" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-12 md:gap-8">
+                    <div class="md:w-3/5 text-center md:text-left">
+                        <p class="hero-eyebrow mb-4">Olá, seja bem-vindo(a)</p>
+                        <h1 class="hero-title mb-3">
+                            <span class="gradient-text">Davi Fenelon</span>
+                        </h1>
+                        <p class="hero-role mb-6">Desenvolvedor Full Stack em Formação</p>
+                        <p class="text-base md:text-lg text-[color:var(--text-muted)] mb-10 max-w-xl mx-auto md:mx-0">
+                            Transformando ideias em aplicações web através da programação e do desenvolvimento de software. Estou constantemente aprendendo novas tecnologias e desenvolvendo projetos para evoluir como desenvolvedor.
+                        </p>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                            <a href="#projects" class="btn btn-primary">Ver Projetos <i class="fas fa-arrow-right text-sm"></i></a>
+                            <a href="#contact" class="btn btn-ghost">Entrar em Contato</a>
+                        </div>
+                    </div>
+
+                    <div class="md:w-2/5 flex justify-center">
+                        <div class="avatar-frame">
+                            <div class="avatar-glow" aria-hidden="true"></div>
+                            <div class="avatar-ring" aria-hidden="true"></div>
+                            <span class="spark" aria-hidden="true"></span>
+                            <span class="spark" aria-hidden="true"></span>
+                            <span class="spark" aria-hidden="true"></span>
+                            <div class="avatar-photo">
+                                <i class="fas fa-user-astronaut avatar-placeholder-icon" id="avatar-fallback-icon"></i>
+                                <img src="img/perfil.jpg" alt="Foto de Davi Fenelon" id="avatar-photo-img"
+                                     onerror="this.style.display='none'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#about" class="scroll-cue" aria-label="Rolar para a próxima seção">
+                <span>Rolar</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- Sobre -->
+        <section id="about" class="py-24 relative z-10">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-14 reveal">
+                    <p class="section-eyebrow">Sobre mim</p>
+                    <h2 class="section-title">Quem é Davi Fenelon</h2>
+                </div>
+
+                <div class="max-w-3xl mx-auto text-center mb-14 reveal">
+                    <p class="text-base md:text-lg leading-relaxed mb-4">
+                        Sou estudante do Ensino Médio integrado ao curso Técnico em Análise e Desenvolvimento de Sistemas pelo Senac Paulista (Mediotec), apaixonado por tecnologia, desenvolvimento web e cibersegurança.
+                    </p>
+                    <p class="text-base md:text-lg leading-relaxed mb-4">
+                        Meu objetivo é conquistar minha primeira oportunidade de estágio na área de Programação ou Segurança da Informação, colocando em prática os conhecimentos adquiridos ao longo da minha formação e evoluindo constantemente como profissional.
+                    </p>
+                    <p class="text-base md:text-lg leading-relaxed">
+                        Tenho interesse em desenvolvimento de software, segurança da informação, inteligência artificial e criação de soluções que resolvam problemas reais.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                    <div class="glass-card about-card reveal">
+                        <i class="fas fa-book-open"></i>
+                        <h3 class="text-lg font-semibold mb-2">Aprendizado</h3>
+                        <p class="text-sm">Sempre estudando novas tecnologias, boas práticas de programação e desenvolvimento moderno.</p>
+                    </div>
+                    <div class="glass-card about-card reveal">
+                        <i class="fas fa-bullseye"></i>
+                        <h3 class="text-lg font-semibold mb-2">Objetivo</h3>
+                        <p class="text-sm">Construir projetos reais, ganhar experiência profissional e evoluir constantemente como desenvolvedor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Currículo -->
+        <section id="resume" class="py-24 relative z-10" style="background: color-mix(in srgb, var(--bg-secondary) 55%, transparent);">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-14 reveal">
+                    <p class="section-eyebrow">Trajetória</p>
+                    <h2 class="section-title">Currículo</h2>
+                    <p class="section-sub">Minha formação e as experiências práticas que venho construindo como estudante de desenvolvimento.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="reveal">
+                        <h3 class="text-xl font-semibold mb-6 flex items-center gap-3">
+                            <span class="w-9 h-9 rounded-full flex items-center justify-center" style="background: color-mix(in srgb, var(--secondary) 20%, transparent); color: var(--accent);">
+                                <i class="fas fa-graduation-cap text-sm"></i>
+                            </span>
+                            Formação
+                        </h3>
+                        <div class="timeline-track">
+                            <div class="timeline-item">
+                                <p class="institution">Senac Paulista – Mediotec</p>
+                                <p class="period">Fevereiro de 2025 até Dezembro de 2027</p>
+                                <p class="details">Ensino Médio integrado ao curso Técnico em Análise e Desenvolvimento de Sistemas.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 mt-8">
+                            <h4 class="text-sm font-semibold mb-2 flex items-center gap-2" style="color: var(--text-primary);">
+                                <i class="fas fa-bullseye text-sm" style="color: var(--accent);"></i>
+                                Objetivo Profissional
+                            </h4>
+                            <p class="text-sm">Conquistar minha primeira oportunidade de estágio na área de Programação ou Segurança da Informação, aplicando meus conhecimentos técnicos e adquirindo experiência profissional.</p>
+                        </div>
+                    </div>
+
+                    <div class="reveal">
+                        <h3 class="text-xl font-semibold mb-6 flex items-center gap-3">
+                            <span class="w-9 h-9 rounded-full flex items-center justify-center" style="background: color-mix(in srgb, var(--secondary) 20%, transparent); color: var(--accent);">
+                                <i class="fas fa-briefcase text-sm"></i>
+                            </span>
+                            Experiência
+                        </h3>
+                        <div class="timeline-track">
+                            <div class="timeline-item">
+                                <p class="institution">Projetos Pessoais</p>
+                                <p class="period">Contínuo</p>
+                                <ul class="responsibilities">
+                                    <li><i class="fas fa-check text-xs mr-1"></i>Desenvolvimento de aplicações web do zero</li>
+                                    <li><i class="fas fa-check text-xs mr-1"></i>Prática de lógica de programação e estruturas de dados</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="institution">Estudos Práticos</p>
+                                <p class="period">Contínuo</p>
+                                <ul class="responsibilities">
+                                    <li><i class="fas fa-check text-xs mr-1"></i>Resolução de exercícios e desafios de programação</li>
+                                    <li><i class="fas fa-check text-xs mr-1"></i>Aprendizado contínuo de novas tecnologias</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="institution">Projetos Acadêmicos</p>
+                                <p class="period">Curso técnico</p>
+                                <ul class="responsibilities">
+                                    <li><i class="fas fa-check text-xs mr-1"></i>Participação em projetos em equipe</li>
+                                    <li><i class="fas fa-check text-xs mr-1"></i>Aplicação prática de conceitos de desenvolvimento web</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 reveal">
+                    <h3 class="text-xl font-semibold mb-6 text-center">Cursos e Certificações</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                        <div class="glass-card about-card text-center">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4 class="text-base font-semibold mb-1">Defesa de Rede</h4>
+                            <p class="period">2025</p>
+                        </div>
+                        <div class="glass-card about-card text-center">
+                            <i class="fas fa-user-shield"></i>
+                            <h4 class="text-base font-semibold mb-1">Gerenciamento de Ameaças Cibernéticas</h4>
+                            <p class="period">2025</p>
+                        </div>
+                        <div class="glass-card about-card text-center">
+                            <i class="fas fa-lock"></i>
+                            <h4 class="text-base font-semibold mb-1">Introdução à Cibersegurança</h4>
+                            <p class="period">2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tecnologias -->
+        <section id="tech" class="py-24 relative z-10">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-14 reveal">
+                    <p class="section-eyebrow">Stack</p>
+                    <h2 class="section-title">Tecnologias</h2>
+                    <p class="section-sub">Ferramentas e linguagens que utilizo no meu dia a dia de estudos e projetos.</p>
+                </div>
+
+                <div class="tech-grid reveal">
+                    <div class="glass-card tech-chip" data-tooltip="Estrutura de páginas web"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                    <div class="glass-card tech-chip" data-tooltip="Estilização e layout"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                    <div class="glass-card tech-chip" data-tooltip="Interatividade e lógica"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                    <div class="glass-card tech-chip" data-tooltip="Automação e back-end"><i class="fab fa-python"></i><span>Python</span></div>
+                    <div class="glass-card tech-chip" data-tooltip="Controle de versão"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                    <div class="glass-card tech-chip" data-tooltip="Hospedagem de repositórios"><i class="fab fa-github"></i><span>GitHub</span></div>
+                    <div class="glass-card tech-chip" data-tooltip="Consultas a bancos de dados"><i class="fas fa-database"></i><span>SQL</span></div>
+                    <div class="glass-card tech-chip" data-tooltip="Sistema operacional"><i class="fab fa-windows"></i><span>Windows</span></div>
+                    <div class="glass-card tech-chip" data-tooltip="Sistema operacional"><i class="fab fa-linux"></i><span>Linux</span></div>
+                    <div class="glass-card tech-chip" data-tooltip="Prototipação e UI/UX"><i class="fab fa-figma"></i><span>Figma</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habilidades: Competências Técnicas, Soft Skills e Idiomas -->
+        <section id="skills" class="py-24 relative z-10">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-14 reveal">
+                    <p class="section-eyebrow">Habilidades</p>
+                    <h2 class="section-title">O que sei fazer</h2>
+                    <p class="section-sub">Competências técnicas, habilidades interpessoais e idiomas que fazem parte da minha formação.</p>
+                </div>
+
+                <!-- Competências Técnicas -->
+                <div class="mb-16 reveal">
+                    <h3 class="text-xl font-semibold mb-6 text-center">Competências Técnicas</h3>
+                    <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+                        <span class="skill-badge">Lógica de Programação</span>
+                        <span class="skill-badge">Desenvolvimento Web Front-End</span>
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS3</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">Python (básico)</span>
+                        <span class="skill-badge">Git</span>
+                        <span class="skill-badge">GitHub</span>
+                        <span class="skill-badge">SQL Básico</span>
+                        <span class="skill-badge">Segurança da Informação</span>
+                        <span class="skill-badge">Versionamento de Código</span>
+                        <span class="skill-badge">Pacote Office</span>
+                        <span class="skill-badge">Windows</span>
+                        <span class="skill-badge">Linux</span>
+                        <span class="skill-badge">Redes de Computadores</span>
+                        <span class="skill-badge">Resolução de Problemas</span>
+                        <span class="skill-badge">Scrum</span>
+                        <span class="skill-badge">Kanban</span>
+                        <span class="skill-badge">Inteligência Artificial</span>
+                        <span class="skill-badge">Engenharia de Prompt</span>
+                        <span class="skill-badge">Desenvolvimento de Projetos Acadêmicos</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="mb-16 reveal">
+                    <h3 class="text-xl font-semibold mb-6 text-center">Soft Skills</h3>
+                    <div class="tech-grid max-w-4xl mx-auto">
+                        <div class="glass-card tech-chip"><i class="fas fa-brain"></i><span>Facilidade de Aprendizado</span></div>
+                        <div class="glass-card tech-chip"><i class="fas fa-users"></i><span>Trabalho em Equipe</span></div>
+                        <div class="glass-card tech-chip"><i class="fas fa-comments"></i><span>Comunicação Interpessoal</span></div>
+                        <div class="glass-card tech-chip"><i class="fas fa-tasks"></i><span>Organização</span></div>
+                        <div class="glass-card tech-chip"><i class="fas fa-bolt"></i><span>Proatividade</span></div>
+                        <div class="glass-card tech-chip"><i class="fas fa-chart-line"></i><span>Pensamento Analítico</span></div>
+                        <div class="glass-card tech-chip"><i class="fas fa-sync-alt"></i><span>Adaptabilidade</span></div>
+                        <div class="glass-card tech-chip"><i class="fas fa-hand-holding-heart"></i><span>Comprometimento</span></div>
+                        <div class="glass-card tech-chip"><i class="fas fa-bullseye"></i><span>Foco em Resultados</span></div>
+                        <div class="glass-card tech-chip"><i class="fas fa-seedling"></i><span>Aprendizado Contínuo</span></div>
+                    </div>
+                </div>
+
+                <!-- Idiomas -->
+                <div class="reveal">
+                    <h3 class="text-xl font-semibold mb-6 text-center">Idiomas</h3>
+                    <div class="max-w-md mx-auto space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium" style="color: var(--text-primary);">Português</span>
+                                <span class="period">Nativo</span>
+                            </div>
+                            <span class="skill-level"><span style="width: 100%;"></span></span>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium" style="color: var(--text-primary);">Inglês</span>
+                                <span class="period">Básico</span>
+                            </div>
+                            <span class="skill-level"><span style="width: 35%;"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projetos -->
+        <section id="projects" class="py-24 relative z-10" style="background: color-mix(in srgb, var(--bg-secondary) 55%, transparent);">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-10 reveal">
+                    <p class="section-eyebrow">Portfólio</p>
+                    <h2 class="section-title">Projetos</h2>
+                    <p class="section-sub">Projetos em desenvolvimento — em breve novidades por aqui.</p>
+                </div>
+
+                <div class="filter-buttons reveal">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="em-desenvolvimento">Em Desenvolvimento</button>
+                </div>
+
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Projeto 1 -->
+                    <div class="glass-card project-card reveal" data-category="design">
+                        <div class="project-thumb">
+                            <img src="img/meunutri.jpg" alt="Protótipo do projeto Meu Nutri" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+                            <div class="thumb-placeholder">
+                                <i class="fas fa-drafting-compass"></i>
+                                <span>Protótipo</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="category">UI/UX Design</span>
+                            <h3 class="text-lg font-semibold mb-1">Meu Nutri</h3>
+                            <p class="text-sm">Protótipo de aplicação desenvolvido no Figma com foco em experiência do usuário (UI/UX), resolução de problemas e criação de soluções escaláveis.</p>
+                            <div class="project-tags">
+                                <span>Figma</span>
+                                <span>UI/UX</span>
+                                <span>Prototipação</span>
+                                <span>Design Thinking</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="javascript:void(0)"
+                                   class="btn btn-primary project-view-btn"
+                                   data-project-link=""
+                                   data-project-name="Meu Nutri"
+                                   data-project-desc="Protótipo de aplicação desenvolvido no Figma com foco em experiência do usuário (UI/UX), resolução de problemas e criação de soluções escaláveis."
+                                   data-project-tech="Figma, UI/UX, Prototipação, Design Thinking"
+                                   data-project-status="Protótipo concluído"
+                                   data-project-prototype="https://placeholder.com"
+                                   data-project-slides="https://placeholder.com">Ver Projeto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 2 -->
+                    <div class="glass-card project-card reveal" data-category="web em-desenvolvimento">
+                        <div class="project-thumb">
+                            <img src="img/projeto2.jpg" alt="Projeto 2 de Davi Fenelon" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+                            <div class="thumb-placeholder">
+                                <i class="fas fa-code"></i>
+                                <span>Em breve</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="category">Em desenvolvimento</span>
+                            <h3 class="text-lg font-semibold mb-1">Em breve</h3>
+                            <p class="text-sm">Projeto em desenvolvimento.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="javascript:void(0)"
+                                   class="btn btn-primary project-view-btn"
+                                   data-project-link=""
+                                   data-project-name="Projeto 2"
+                                   data-project-desc="Projeto em desenvolvimento."
+                                   data-project-tech="HTML, CSS, JavaScript"
+                                   data-project-status="Em desenvolvimento"
+                                   data-project-prototype="https://placeholder.com"
+                                   data-project-slides="https://placeholder.com">Ver Projeto</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 3 -->
+                    <div class="glass-card project-card reveal" data-category="em-desenvolvimento">
+                        <div class="project-thumb">
+                            <img src="img/projeto3.jpg" alt="Projeto 3 de Davi Fenelon" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+                            <div class="thumb-placeholder">
+                                <i class="fas fa-code"></i>
+                                <span>Em breve</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="category">Em desenvolvimento</span>
+                            <h3 class="text-lg font-semibold mb-1">Em breve</h3>
+                            <p class="text-sm">Projeto em desenvolvimento.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="javascript:void(0)"
+                                   class="btn btn-primary project-view-btn"
+                                   data-project-link=""
+                                   data-project-name="Projeto 3"
+                                   data-project-desc="Projeto em desenvolvimento."
+                                   data-project-tech="HTML, CSS, JavaScript"
+                                   data-project-status="Em desenvolvimento"
+                                   data-project-prototype="https://placeholder.com"
+                                   data-project-slides="https://placeholder.com">Ver Projeto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metodologia / Processo de Desenvolvimento -->
+        <section id="process" class="py-24 relative z-10">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-14 reveal">
+                    <p class="section-eyebrow">Metodologia</p>
+                    <h2 class="section-title">Meu Processo de Desenvolvimento</h2>
+                    <p class="section-sub">As etapas que sigo, do estudo à entrega, em cada projeto que desenvolvo.</p>
+                </div>
+
+                <div class="process-track reveal">
+                    <div class="glass-card process-step">
+                        <span class="process-number">01</span>
+                        <i class="fas fa-book"></i>
+                        <h4>Estudo</h4>
+                        <p>Pesquiso conceitos, tecnologias e boas práticas antes de começar a construir.</p>
+                    </div>
+                    <div class="glass-card process-step">
+                        <span class="process-number">02</span>
+                        <i class="fas fa-drafting-compass"></i>
+                        <h4>Planejamento</h4>
+                        <p>Organizo requisitos, estrutura e etapas do projeto antes de codificar.</p>
+                    </div>
+                    <div class="glass-card process-step">
+                        <span class="process-number">03</span>
+                        <i class="fas fa-laptop-code"></i>
+                        <h4>Desenvolvimento</h4>
+                        <p>Escrevo código limpo e organizado, com foco em boas práticas.</p>
+                    </div>
+                    <div class="glass-card process-step">
+                        <span class="process-number">04</span>
+                        <i class="fas fa-vial"></i>
+                        <h4>Testes</h4>
+                        <p>Valido funcionalidades e corrijo problemas antes da entrega final.</p>
+                    </div>
+                    <div class="glass-card process-step">
+                        <span class="process-number">05</span>
+                        <i class="fas fa-infinity"></i>
+                        <h4>Aprendizado Contínuo</h4>
+                        <p>Reviso o que aprendi em cada projeto para evoluir no próximo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Atualmente Aprendendo -->
+        <section id="learning" class="py-24 relative z-10" style="background: color-mix(in srgb, var(--bg-secondary) 55%, transparent);">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 reveal">
+                    <p class="section-eyebrow">Em progresso</p>
+                    <h2 class="section-title">Atualmente Aprendendo</h2>
+                    <p class="section-sub">O que está no meu radar de estudos neste momento.</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 reveal">
+                    <span class="glass-card learning-chip"><span class="pulse-dot"></span>React</span>
+                    <span class="glass-card learning-chip"><span class="pulse-dot"></span>Node.js</span>
+                    <span class="glass-card learning-chip"><span class="pulse-dot"></span>TypeScript</span>
+                    <span class="glass-card learning-chip"><span class="pulse-dot"></span>Banco de Dados</span>
+                    <span class="glass-card learning-chip"><span class="pulse-dot"></span>Boas Práticas</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Informações Adicionais -->
+        <section id="info" class="py-24 relative z-10">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 reveal">
+                    <p class="section-eyebrow">Bom saber</p>
+                    <h2 class="section-title">Informações Adicionais</h2>
+                </div>
+
+                <div class="max-w-2xl mx-auto reveal">
+                    <div class="glass-card p-8">
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <li class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-check-circle mt-1" style="color: var(--accent);"></i>
+                                Disponibilidade para estágio
+                            </li>
+                            <li class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-check-circle mt-1" style="color: var(--accent);"></i>
+                                Interesse em Programação
+                            </li>
+                            <li class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-check-circle mt-1" style="color: var(--accent);"></i>
+                                Interesse em Desenvolvimento Web
+                            </li>
+                            <li class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-check-circle mt-1" style="color: var(--accent);"></i>
+                                Interesse em Cibersegurança
+                            </li>
+                            <li class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-check-circle mt-1" style="color: var(--accent);"></i>
+                                Conhecimento básico em ferramentas de desenvolvimento
+                            </li>
+                            <li class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-check-circle mt-1" style="color: var(--accent);"></i>
+                                Perfil dedicado, responsável e comprometido com aprendizado contínuo
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contact" class="py-24 relative z-10">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-14 reveal">
+                    <p class="section-eyebrow">Vamos conversar</p>
+                    <h2 class="section-title">Contato</h2>
+                    <p class="section-sub">Estou disponível para trocar ideias, colaborar em projetos e novas oportunidades.</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-12 max-w-5xl mx-auto">
+                    <div class="md:w-2/5 reveal">
+                        <div class="space-y-6">
+                            <div class="contact-info-item">
+                                <span class="icon-badge"><i class="fas fa-envelope"></i></span>
+                                <div>
+                                    <h4 class="font-medium" style="color: var(--text-primary);">Email</h4>
+                                    <p class="text-sm">davifenelon89@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="icon-badge"><i class="fas fa-phone-alt"></i></span>
+                                <div>
+                                    <h4 class="font-medium" style="color: var(--text-primary);">Telefone</h4>
+                                    <p class="text-sm">(81) 99398-5372</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <span class="icon-badge"><i class="fas fa-map-marker-alt"></i></span>
+                                <div>
+                                    <h4 class="font-medium" style="color: var(--text-primary);">Cidade</h4>
+                                    <p class="text-sm">Paulista - Pernambuco</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-10">
+                            <h4 class="font-medium mb-4" style="color: var(--text-primary);">Redes Sociais</h4>
+                            <div class="flex gap-3">
+                                <a href="https://github.com/Waifaier" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/davi-fenelon-946528410" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://instagram.com/wifier_" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:w-3/5 reveal">
+                        <div class="glass-card p-8">
+                            <div class="form-alert" id="form-alert" role="alert"></div>
+                            <form id="contact-form" novalidate>
+                                <div class="form-group">
+                                    <label for="name">Nome</label>
+                                    <input type="text" id="name" name="name" class="form-control" required>
+                                    <span class="field-error" id="error-name">Informe seu nome completo.</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                    <span class="field-error" id="error-email">Informe um email válido.</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject">Assunto</label>
+                                    <input type="text" id="subject" name="subject" class="form-control" required>
+                                    <span class="field-error" id="error-subject">Informe o assunto da mensagem.</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">Mensagem</label>
+                                    <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                                    <span class="field-error" id="error-message">Escreva uma mensagem com pelo menos 10 caracteres.</span>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary w-full">Enviar Mensagem</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-14 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between gap-10 mb-10">
+                <div class="md:w-1/3">
+                    <a href="#home" class="logo-mark">Davi<span>.</span>Fenelon</a>
+                    <p class="text-sm mt-4 max-w-xs" style="color: var(--text-muted);">Desenvolvedor Full Stack em formação, construindo projetos e evoluindo a cada linha de código.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:w-2/3">
+                    <div>
+                        <h4 class="font-semibold mb-4" style="color: var(--text-primary);">Navegação</h4>
+                        <ul class="footer-links space-y-2">
+                            <li><a href="#home">Início</a></li>
+                            <li><a href="#about">Sobre</a></li>
+                            <li><a href="#resume">Currículo</a></li>
+                            <li><a href="#projects">Projetos</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4" style="color: var(--text-primary);">Mais</h4>
+                        <ul class="footer-links space-y-2">
+                            <li><a href="#tech">Tecnologias</a></li>
+                            <li><a href="#skills">Habilidades</a></li>
+                            <li><a href="#process">Metodologia</a></li>
+                            <li><a href="#contact">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4" style="color: var(--text-primary);">Redes Sociais</h4>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/Waifaier" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/davi-fenelon-946528410" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://instagram.com/wifier_" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style="border-top: 1px solid var(--border);">
+                <p class="text-sm" style="color: var(--text-muted);">© 2026 Davi Fenelon. Todos os direitos reservados.</p>
+                <a href="#home" class="footer-top-btn">Voltar ao topo <i class="fas fa-arrow-up text-xs"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de detalhes do projeto -->
+    <div class="project-modal" id="project-modal" aria-hidden="true">
+        <div class="project-modal-overlay" data-modal-close></div>
+        <div class="project-modal-content" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+            <button class="project-modal-close" data-modal-close aria-label="Fechar">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 class="project-modal-title" id="project-modal-title"></h3>
+            <span class="project-modal-status"></span>
+            <p class="project-modal-desc"></p>
+            <div class="project-modal-tech"></div>
+            <div class="project-modal-actions">
+                <a href="https://placeholder.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost project-modal-link" data-role="prototype">
+                    <i class="fas fa-drafting-compass"></i> Protótipo
+                </a>
+                <a href="https://placeholder.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost project-modal-link" data-role="slides">
+                    <i class="fas fa-file-powerpoint"></i> Slides
+                </a>
+            </div>
+            <button class="btn btn-primary project-modal-close-btn" data-modal-close>Fechar</button>
+        </div>
+    </div>
+
+    <!-- Botão flutuante voltar ao topo -->
+    <button id="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- EmailJS SDK: usado para enviar o formulário de contato sem backend -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Cursor personalizado (spritesheet img/cursor.jpg) -->
+    <script src="cursor.js" defer></script>
+    <script src="main.js" defer></script>
+</body>
+</html>
